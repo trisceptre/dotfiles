@@ -26,7 +26,6 @@ packages=(
     xdg-desktop-portal-gnome
     wireplumber
     xwayland-satellite
-    yazi
     zsh-autosuggestions
     zsh-syntax-highlighting
     zsh-theme-powerlevel10k-git
