@@ -144,9 +144,9 @@
                     "colorizeSystemText": "none",
                     "customIconPath": "",
                     "enableColorization": true,
-                    "icon": "noctalia",
+                    "icon": "power",
                     "id": "ControlCenter",
-                    "useDistroLogo": true
+                    "useDistroLogo": false
                 }
             ]
         }
