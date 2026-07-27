@@ -4,7 +4,7 @@ include "colors.kdl"
 spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 spawn-at-startup "vicinae" "server"
 spawn-at-startup "hypridle"
-spawn-at-startup "qs" "-c" "noctalia-shell"
+spawn-at-startup "noctalia"
 
 // General Settings
 prefer-no-csd

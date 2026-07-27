@@ -13,7 +13,7 @@ packages=(
     hyprlock
     libnotify
     niri
-    noctalia-shell
+    noctalia
     noto-fonts
     noto-fonts-emoji
     oh-my-zsh-git
