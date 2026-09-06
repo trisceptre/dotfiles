@@ -62,6 +62,15 @@ done
 
 ln -snf "$DOT_DIR/wallpapers" "$HOME/Pictures/Wallpapers"
 
+git -C "$DOT_DIR" config filter.scrubhome.clean 'sed "s|$HOME/|~/|g"'
+
+NOCTALIA_STATE="$HOME/.local/state/noctalia"
+mkdir -p "$NOCTALIA_STATE"
+if [ -f "$NOCTALIA_STATE/settings.toml" ] && [ ! -L "$NOCTALIA_STATE/settings.toml" ]; then
+    mv "$NOCTALIA_STATE/settings.toml" "$NOCTALIA_STATE/settings.toml.bak.$(date +%s)"
+fi
+ln -snf "$DOT_DIR/noctalia/settings.toml" "$NOCTALIA_STATE/settings.toml"
+
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
 if [ "$SHELL" != "/usr/bin/zsh" ]; then
