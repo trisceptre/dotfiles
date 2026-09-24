@@ -24,5 +24,13 @@
          "name": "vicinae-dark",
          "icon_theme": "Adwaita"
       }
-   }
+   },
+   "launcher_window": {
+      "opacity": 0.9,
+      "compact_mode": {
+         "enabled": false
+      },
+      "material": "blur"
+   },
+   "favorites": []
 }

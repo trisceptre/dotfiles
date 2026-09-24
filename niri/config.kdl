@@ -291,6 +291,23 @@ window-rule {
     open-floating true
 }
 
+// Vicinae
+window-rule {
+    match app-id=r#"vicinae"#
+    background-effect {
+        blur true
+        xray false
+    }
+}
+
+layer-rule {
+    match namespace=r#"vicinae"#
+    background-effect {
+        blur true
+        xray false
+    }
+}
+
 // Global appearance
 window-rule {
     geometry-corner-radius 6
