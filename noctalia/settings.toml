@@ -1,5 +1,8 @@
 config_version = 14
 
+[audio]
+enable_sounds = false
+
 [bar.default]
 end = [ "tray", "notifications", "network", "volume", "control-center" ]
 margin_ends = 0
