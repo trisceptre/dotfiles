@@ -48,10 +48,4 @@ alacritty = { template = 'alacritty.toml', target = '~/.config/alacritty/colors.
 
 niri = { template = 'niri.kdl', dst = '~/.config/niri/colors.kdl' }
 
-vscode = { src = 'vscode.json', dst = '~/.cache/wallust/colors.json' }
-
-vscode2 = { src = 'vscode', dst = '~/.cache/wallust/colors' }
-
-vicinae = { src = 'vicinae.toml', dst = '~/.local/share/vicinae/themes/wallust.toml' }
-
 hyprlock = { src = 'colors-hyprland.conf', dst = '~/.config/hypr/wallust/wallust-hyprland.conf' }
