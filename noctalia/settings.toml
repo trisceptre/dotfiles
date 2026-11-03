@@ -1,4 +1,4 @@
-config_version = 14
+config_version = 16
 
 [audio]
 enable_sounds = false
@@ -37,7 +37,7 @@ widget_order = [ "lockscreen-login-box@DP-2" ]
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@DP-2".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.88
         background_radius = 12.0
         center_password_text = false
@@ -71,6 +71,7 @@ position = "top_right"
 
 [shell]
 font_family = "JetBrainsMono Nerd Font"
+polkit_agent = true
 settings_show_advanced = false
 
     [shell.panel]

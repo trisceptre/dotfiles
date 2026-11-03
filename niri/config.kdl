@@ -1,7 +1,6 @@
 include "colors.kdl"
 
 // Startup Applications
-spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 spawn-at-startup "vicinae" "server"
 spawn-at-startup "hypridle"
 spawn-at-startup "noctalia"
@@ -230,11 +229,6 @@ window-rule {
 }
 
 // Auth
-window-rule {
-    match app-id=r#"org\.kde\.polkit-kde-authentication-agent-1"#
-    open-floating true
-}
-
 window-rule {
     match title=r#".*Authentication.*"#
     open-floating true

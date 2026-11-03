@@ -8,7 +8,6 @@ DOT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
 packages=(
     alacritty
     fastfetch
-    gnome-keyring
     hypridle
     hyprlock
     libnotify
@@ -16,19 +15,18 @@ packages=(
     noctalia
     noto-fonts
     noto-fonts-emoji
-    oh-my-zsh-git
+    oo7
     pipewire-pulse
-    polkit-kde-agent
+    starship
     ttf-jetbrains-mono-nerd
     ttf-sarasa-gothic
     vicinae
     wallust
-    xdg-desktop-portal-gnome
     wireplumber
+    xdg-desktop-portal-gnome
     xwayland-satellite
     zsh-autosuggestions
     zsh-syntax-highlighting
-    zsh-theme-powerlevel10k-git
 )
 
 if command -v paru &> /dev/null; then
@@ -42,16 +40,24 @@ fi
 
 $AUR_HELPER -S --needed --noconfirm "${packages[@]}"
 
+if ! grep -q pam_oo7 /etc/pam.d/login; then
+    sudo sed -i \
+        -e '/^auth[[:space:]]\+include[[:space:]]\+system-local-login/a auth        optional    pam_oo7.so' \
+        -e '/^session[[:space:]]\+include[[:space:]]\+system-local-login/a session     optional    pam_oo7.so auto_start' \
+        /etc/pam.d/login
+    grep -q pam_oo7 /etc/pam.d/login || echo "WARNING: /etc/pam.d/login layout unexpected, add pam_oo7.so lines by hand"
+fi
+systemctl --user enable oo7-daemon.service
+
 ln -sf "$DOT_DIR/.zshrc"    "$HOME/.zshrc"
 ln -sf "$DOT_DIR/.zprofile" "$HOME/.zprofile"
-ln -sf "$DOT_DIR/.p10k.zsh" "$HOME/.p10k.zsh"
+ln -sf "$DOT_DIR/starship.toml" "$HOME/.config/starship.toml"
 
 touch "$HOME/.zsh_history"
 
 chmod 600 "$HOME/.zsh_history"
 chmod 600 "$HOME/.zshrc"
 chmod 600 "$HOME/.zprofile"
-chmod 600 "$HOME/.p10k.zsh"
 
 mkdir -p "$HOME/.config"
 configs=(alacritty fastfetch fontconfig hypr mpv niri noctalia vicinae wallust yazi zsh)
