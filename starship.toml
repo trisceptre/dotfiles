@@ -11,17 +11,6 @@ symbol = " "
 
 [git_status]
 style = 'bold yellow'
-format = '([\[ $all_status$ahead_behind\]]($style) )'
-conflicted = '= '
-stashed = '$ '
-deleted = 'X '
-renamed = '» '
-modified = '! '
-staged = '+ '
-untracked = '? '
-ahead = '⇡ '
-behind = '⇣ '
-diverged = '⇕ '
 
 [character]
 success_symbol = '[❯](bold cyan)'

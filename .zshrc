@@ -1,6 +1,7 @@
 #
 # ~/.zshrc
 #
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.bun/bin:$PATH"
 export PATH="$HOME/.rokit/bin:$PATH"
@@ -12,14 +13,9 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 [[ -f ~/.cache/wallust/sequences ]] && cat ~/.cache/wallust/sequences
 
-# Linux console fonts lack Nerd Font glyphs, so the tty gets a plain prompt
 if [[ $TERM != linux ]]; then
   eval "$(starship init zsh)"
 else
   PS1='%F{green}%~%f %# '
 fi
 [[ -f ~/.config/zsh/config.zsh ]] && source ~/.config/zsh/config.zsh
-
-
-# Added by claude-mem installer for claude-mem
-export PATH="$HOME/.local/bin:$PATH"
