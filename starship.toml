@@ -1,5 +1,4 @@
 "$schema" = 'https://starship.rs/config-schema.json'
-scan_timeout = 500
 
 [directory]
 style = 'bold green'
